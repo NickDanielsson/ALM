@@ -18,13 +18,18 @@ public class AnimalService {
         return animalRepository.findAll();
     }
 
-    public void saveNewAnimal(Animal animal) {
+    public Animal saveNewAnimal(Animal animal) {
         animalRepository.save(animal);
+        return animal;
     }
-
+/*
     public List<String> getAnimalWithFourLegs() {
         List<Animal> animalList = animalRepository.findAnimalByHasFourLegs(true);
 
         return animalList.stream().map(Animal::getName).collect(Collectors.toList());
+    } */
+
+    public Animal findByName(String name) {
+        return animalRepository.findAnimalByName(name);
     }
 }

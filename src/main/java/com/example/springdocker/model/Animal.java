@@ -9,7 +9,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Animal {
     String id;
+    String typeOfAnimal;
     String name;
-    boolean hasFourLegs;
-    boolean isAPetAnimal;
+    int numberOfLegs;
+
+
+    public Animal(String name, String typeOfAnimal, int numberOfLegs) {
+        this.name = name;
+        this.typeOfAnimal = typeOfAnimal;
+        this.numberOfLegs = numberOfLegs;
+
+    }
 }

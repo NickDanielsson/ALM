@@ -4,10 +4,7 @@ import com.example.springdocker.model.Animal;
 import com.example.springdocker.model.Food;
 import com.example.springdocker.service.AnimalService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,14 +18,21 @@ public class AnimalController {
         return service.getAnimals();
     }
 
-    @PostMapping("/foods")
-    public void saveNewFood(@RequestBody Animal animal) {
+    @GetMapping("/add")
+    public String saveNewFood(@RequestParam String name,@RequestParam String typeOfAnimal, @RequestParam int numberOfLegs) {
+       Animal animal = new Animal(name,typeOfAnimal,numberOfLegs);
         service.saveNewAnimal(animal);
+        return "Djuret " + name + " lades till!";
     }
 
-
+/*
     @GetMapping("/animals/hasfourlegs")
     public List<String> getAnimalsWithFourLegs() {
         return service.getAnimalWithFourLegs();
+    }*/
+
+    @GetMapping("/")
+    public String hello(){
+        return "Hello";
     }
 }
