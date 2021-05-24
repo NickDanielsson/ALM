@@ -15,7 +15,6 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-@DataMongoTest
 @ExtendWith(MockitoExtension.class)
 class AnimalServiceTest {
 
