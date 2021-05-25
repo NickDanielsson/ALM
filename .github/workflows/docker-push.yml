@@ -40,5 +40,5 @@ jobs:
       - name: Upload jar file
         uses: actions/upload-artifact@v2
         with:
-          name: my-app.jar
+          name: my-java-app.jar
           path: target/*-jar
